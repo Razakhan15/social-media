@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
-  const nav = useNavigate()
+  const nav = useNavigate();
   const [show, setShow] = useState(false);
   const [commentInput, setCommentInput] = useState("");
   const [posts, setPosts] = useState([]);
@@ -72,10 +72,10 @@ function Home() {
     }
   };
 
-  const handelLogout = () =>{
-    localStorage.clear()
-    nav('/')
-  }
+  const handelLogout = () => {
+    localStorage.clear();
+    nav("/");
+  };
 
   return (
     <div className="">
@@ -141,22 +141,23 @@ function Home() {
                     <span>{post.comments.length}</span>
                   </button>
                 </div>
-                {show && (
-                  <div>
-                    <div className="flex gap-5 mt-5 mb-5">
-                      <input
-                        className="border-2 border-black rounded-lg p-1"
-                        type="text"
-                        placeholder="Add a comment"
-                        onChange={(e) => setCommentInput(e.target.value)}
-                      />
-                      <button
-                        onClick={() => handleAddComment(post._id, commentInput)}
-                        className="bg-blue-500 text-white font-bold rounded-lg p-1"
-                      >
-                        Add Comment
-                      </button>
-                    </div>
+
+                <div>
+                  <div className="flex gap-5 mt-5 mb-5">
+                    <input
+                      className="border-2 border-black rounded-lg p-1"
+                      type="text"
+                      placeholder="Add a comment"
+                      onChange={(e) => setCommentInput(e.target.value)}
+                    />
+                    <button
+                      onClick={() => handleAddComment(post._id, commentInput)}
+                      className="bg-blue-500 text-white font-bold rounded-lg p-1"
+                    >
+                      Add Comment
+                    </button>
+                  </div>
+                  {show && (
                     <ul>
                       {post.comments.map((comment, index) => (
                         <li className="m-2" key={index}>
@@ -164,8 +165,8 @@ function Home() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           </div>
