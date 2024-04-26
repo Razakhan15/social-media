@@ -20,7 +20,7 @@ const ForgotPass = () => {
           },
         };
         const { data } = await axios.put(
-          "http://localhost:5000/api/user/forgot",
+          "https://social-media-5tki.onrender.com/api/user/forgot",
           { email, password },
           config
         );

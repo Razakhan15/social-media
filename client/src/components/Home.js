@@ -21,7 +21,7 @@ function Home() {
       };
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/posts",
+        "https://social-media-5tki.onrender.com/api/posts",
         config
       );
       setPosts(data);
@@ -38,7 +38,7 @@ function Home() {
         },
       };
       const { data } = await axios.post(
-        `http://localhost:5000/api/posts/like/${postId}`,
+        `https://social-media-5tki.onrender.com/api/posts/like/${postId}`,
         config
       );
       const updatedPosts = posts.map((post) =>
@@ -59,7 +59,7 @@ function Home() {
       };
 
       const { data } = await axios.post(
-        `http://localhost:5000/api/posts/comment/${postId}`,
+        `https://social-media-5tki.onrender.com/api/posts/comment/${postId}`,
         { text: commentText },
         config
       );

@@ -21,7 +21,7 @@ function CreatePost() {
         },
       };
       await axios.post(
-        "http://localhost:5000/api/posts",
+        "https://social-media-5tki.onrender.com/api/posts",
         { name: user.name, title: newPost.title, content: newPost.content },
         config
       );

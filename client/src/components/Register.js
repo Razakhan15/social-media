@@ -10,7 +10,7 @@ const Register = () => {
   const [password, setPassword] = useState();
 
   const submitHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!name || !email || !password || !confirmpassword) {
       return;
     }
@@ -23,7 +23,7 @@ const Register = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",
+        "https://social-media-5tki.onrender.com/api/user",
         { name, email, password },
         config
       );
@@ -51,7 +51,7 @@ const Register = () => {
                   Your email
                 </label>
                 <input
-                autoComplete="on"
+                  autoComplete="on"
                   onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   name="email"
@@ -69,7 +69,7 @@ const Register = () => {
                   Your name
                 </label>
                 <input
-                autoComplete="on"
+                  autoComplete="on"
                   onChange={(e) => setName(e.target.value)}
                   type="text"
                   name="name"
@@ -87,7 +87,7 @@ const Register = () => {
                   Password
                 </label>
                 <input
-                autoComplete="on"
+                  autoComplete="on"
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   name="password"
@@ -105,7 +105,7 @@ const Register = () => {
                   Confirm Password
                 </label>
                 <input
-                autoComplete="on"
+                  autoComplete="on"
                   onChange={(e) => setConfirmpassword(e.target.value)}
                   type="password"
                   name="password"
